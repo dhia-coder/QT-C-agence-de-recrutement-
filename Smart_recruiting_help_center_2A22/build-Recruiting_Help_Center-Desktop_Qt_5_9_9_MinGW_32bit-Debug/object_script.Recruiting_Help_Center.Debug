@@ -1,0 +1,14 @@
+INPUT(
+./debug\connexion.o
+./debug\entreprise.o
+./debug\main.o
+./debug\mainwindow.o
+./debug\offre.o
+./debug\windowentreprises.o
+./debug\windowoffres.o
+./debug\qrc_icon.o
+./debug\qrc_sound.o
+./debug\moc_mainwindow.o
+./debug\moc_windowentreprises.o
+./debug\moc_windowoffres.o
+);
