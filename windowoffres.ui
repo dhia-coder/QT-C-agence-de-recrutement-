@@ -109,7 +109,7 @@ margin-top: 2px; /* make non-selected tabs look smaller */
       <enum>QTabWidget::Triangular</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">

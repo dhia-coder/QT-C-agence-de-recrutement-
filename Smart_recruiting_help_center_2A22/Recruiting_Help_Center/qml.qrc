@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>localisation.qml</file>
-    </qresource>
-</RCC>

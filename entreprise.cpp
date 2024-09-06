@@ -54,7 +54,7 @@ QSqlQueryModel *entreprise::afficher(){
 bool entreprise::supprimer(QString id){
 
     QSqlQuery query;
-    query.prepare("delete from societe where id = :id");
+    query.prepare("delete from societe where ID = :id");
     query.bindValue(":id",id);
     return query.exec();
 }
@@ -77,7 +77,7 @@ QSqlQueryModel *entreprise::trier() //ml A-Z lieu
 {
     QSqlQuery * q = new  QSqlQuery ();
            QSqlQueryModel * model = new  QSqlQueryModel ();
-           q->prepare("SELECT * FROM documentcin order by nomc ASC");
+           q->prepare("SELECT * FROM societe order by nom ASC");
            q->exec();
            model->setQuery(*q);
            return model;
@@ -87,7 +87,7 @@ QSqlQueryModel *entreprise::trierdec() //ml Z-A
 
            QSqlQuery * q = new  QSqlQuery ();
                   QSqlQueryModel * model = new  QSqlQueryModel ();
-                  q->prepare("SELECT * from societe order by nomc DESC");
+                  q->prepare("SELECT * from societe order by nom DESC");
                   q->exec();
                   model->setQuery(*q);
                   return model;
@@ -95,7 +95,7 @@ QSqlQueryModel *entreprise::trierdec() //ml Z-A
 QSqlQueryModel *entreprise::recherche(QString id)
  {
      QSqlQueryModel * model= new QSqlQueryModel();
-     model->setQuery("select * from societe where id LIKE '"+id+"%' or nom LIKE '"+id+"%' or adresse LIKE '"+id+"%'");
+     model->setQuery("select * from societe where ID LIKE '"+id+"%' or nom LIKE '"+id+"%' or adresse LIKE '"+id+"%'");
 
 
      model->setHeaderData(0,Qt::Horizontal, QObject::tr("id"));

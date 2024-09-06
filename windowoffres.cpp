@@ -313,9 +313,9 @@ void WindowOffres::on_recherche_c_clicked()
   QString  domaine=ui->conseil_le->text();
   QSqlQuery q;//,salaire*(24-nheures)+(salaire*njconge)/30   //domaine,ID_ENTREPRISE,COMPETANCE,niveau,salaire,njconge,sexe
   if(domaine.length()==0)
-      q.prepare("select offre.domaine,societe.NOM,offre.COMPETANCE,offre.niveau,offre.salaire,offre.njconge,offre.nheures,offre.sexe,offre.salaire*(24-offre.nheures)+(offre.salaire*offre.njconge)/30 as k from offre, societe where offre.etat = 'o' and offre.ID_ENTREPRISE=societe.id order by k desc;");
+      q.prepare("select offre.domaine,societe.NOM,offre.COMPETANCE,offre.niveau,offre.salaire,offre.njconge,offre.nheures,offre.sexe,offre.salaire*(24-offre.nheures)+(offre.salaire*offre.njconge)/30 as k from offre, societe where offre.etat = 'o' and offre.ID_ENTREPRISE=societe.ID order by k desc;");
   else
-      q.prepare("select offre.domaine,societe.NOM,offre.COMPETANCE,offre.niveau,offre.salaire,offre.njconge,offre.nheures,offre.sexe,offre.salaire*(24-offre.nheures)+(offre.salaire*offre.njconge)/30 as k from offre, societe where offre.etat = 'o' and offre.domaine like '%"+domaine+"%'and offre.ID_ENTREPRISE=societe.id order by k desc;");
+      q.prepare("select offre.domaine,societe.NOM,offre.COMPETANCE,offre.niveau,offre.salaire,offre.njconge,offre.nheures,offre.sexe,offre.salaire*(24-offre.nheures)+(offre.salaire*offre.njconge)/30 as k from offre, societe where offre.etat = 'o' and offre.domaine like '%"+domaine+"%'and offre.ID_ENTREPRISE=societe.ID order by k desc;");
 //q.prepare("Select * from offre where domaine like '%"+domaine+"%';");
   if(q.exec()){
  if( q.size()!=0){
@@ -370,7 +370,7 @@ void WindowOffres::on_o_pushButton_clicked()
                        "<body bgcolor=#ffffff link=#5000A0>\n"
 
                        //     "<align='right'> " << datefich << "</align>"
-                       "<center> <H1>Liste Des ABONNES </H1></br></br><table border=1 cellspacing=0 cellpadding=2>\n";
+                       "<center> <H1>Liste Des offres </H1></br></br><table border=1 cellspacing=0 cellpadding=2>\n";
 
                    // headers
                    out << "<thead><tr bgcolor=#f0f0f0> <th>Numero</th>";
